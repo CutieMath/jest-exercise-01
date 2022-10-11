@@ -9,8 +9,9 @@ it("calls swapi to get people", (done) => {
   });
 });
 
+// Simpler version to test async code
 it("calls swapi to get people method two", () => {
-  expect.assertions(1); // make sure the code is running
+  expect.assertions(1);
   return swapi.getPeople(fetch).then((data) => {
     expect(data.count).toEqual(82);
   });
