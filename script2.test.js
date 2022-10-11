@@ -17,9 +17,10 @@ it("calls swapi to get people method two", () => {
 });
 
 it("calls swapi to get people with a promise", (done) => {
-  expect.assertions(1);
+  expect.assertions(2);
   swapi.getPeople(fetch).then((data) => {
     expect(data.count).toEqual(82);
+    expect(data.results.length).toBeGreaterThan(5);
     done();
   });
 });
