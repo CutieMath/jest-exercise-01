@@ -1,10 +1,7 @@
 const fetch = require("node-fetch");
 
 const getPeoplePromise = (fetch) => {
-  return fetch("https://swapi.dev/api/people", {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  })
+  return fetch("https://swapi.dev/api/people")
     .then((response) => response.json())
     .then((data) => {
       return {

@@ -36,8 +36,11 @@ it("getPeople returns count and results", () => {
         }),
     })
   );
-  expect.assertions(1);
+  expect.assertions(4);
   return swapi.getPeoplePromise(mockFetch).then((data) => {
     expect(mockFetch.mock.calls.length).toBe(1);
+    expect(mockFetch).toBeCalledWith("https://swapi.dev/api/people");
+    expect(data.count).toEqual(82);
+    expect(data.results.length).toBeGreaterThan(5);
   });
 });
